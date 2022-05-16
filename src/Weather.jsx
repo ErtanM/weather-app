@@ -1,9 +1,16 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Weather = () => {
   const [lat, setLat] = useState(null);
   const [lng, setLng] = useState(null);
   const [status, setStatus] = useState(null);
+
+  //try this with city name!
+  //Add option for current location.
+  //https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+  // const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=`;
 
   //Find a way to use lat and lng for api call with await.
   const getLocation = async () => {
