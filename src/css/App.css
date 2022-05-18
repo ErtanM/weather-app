@@ -1,9 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@200;300&family=Bigelow+Rules&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  margin: 8px;
+  margin: 9px;
+  padding: 3px;
+  font-family: "Archivo", sans-serif;
+}
+
+body {
+  color: white;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .App {
@@ -17,13 +52,13 @@
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
+  background: inherit;
 }
 
 .App .outer-card {
   border: 20px;
   border-color: black;
   border-radius: 20px;
-  background-color: red;
 }
 
 .App .outer-card .container {
@@ -42,6 +77,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .App .outer-card .title-container {
@@ -89,6 +131,18 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.App .outer-card .weather-card #city-search {
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px white;
+  outline: none;
+  width: 100%;
+  height: 25px;
+  color: white;
 }
 
 .App .outer-card .weather-card .feels-like {
