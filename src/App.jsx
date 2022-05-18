@@ -1,6 +1,6 @@
 import "./css/App.css";
 import React, { Component } from "react";
-import WeatherCard from "./css/components/Weather.component";
+import WeatherCard from "./components/Weather.component";
 import axios from "axios";
 import Inf from "./Inf.json";
 
