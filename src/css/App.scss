@@ -1,2 +1,60 @@
 //Main css gets transformed in App.css
 //You don't use this file to upload css to App.jsx
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin: 8px;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .outer-card {
+    border: 20px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: red;
+
+    .container {
+      height: auto;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .title-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: max-content;
+
+      #city-search {
+        outline: none;
+      }
+    }
+
+    .weather-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .temp {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .feels-like {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+}
