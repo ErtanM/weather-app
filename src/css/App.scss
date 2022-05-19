@@ -73,6 +73,12 @@ body {
       justify-content: center;
       align-items: center;
 
+      .input {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
       .temp {
         display: flex;
         justify-content: space-around;
@@ -85,14 +91,23 @@ body {
         border-radius: 10px;
         border: 1px white;
         outline: none;
-        width: 100%;
+        width: 150px;
         height: 25px;
         color: white;
       }
 
       .feels-like {
         display: flex;
+        flex-direction: row;
         justify-content: space-around;
+        align-items: center;
+        padding: 5px;
+        .first {
+          float: right;
+        }
+        .second {
+          float: left;
+        }
       }
     }
   }

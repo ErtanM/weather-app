@@ -102,6 +102,16 @@ body {
           align-items: center;
 }
 
+.App .outer-card .weather-card .input {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .App .outer-card .weather-card .temp {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,7 +127,7 @@ body {
   border-radius: 10px;
   border: 1px white;
   outline: none;
-  width: 100%;
+  width: 150px;
   height: 25px;
   color: white;
 }
@@ -126,7 +136,23 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+}
+
+.App .outer-card .weather-card .feels-like .first {
+  float: right;
+}
+
+.App .outer-card .weather-card .feels-like .second {
+  float: left;
 }
 /*# sourceMappingURL=App.css.map */

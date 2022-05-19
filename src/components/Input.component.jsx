@@ -6,7 +6,7 @@ const Input = () => {
     console.log(userValue);
   };
   return (
-    <div>
+    <div className="input">
       <input
         type="text"
         name="city-search"
