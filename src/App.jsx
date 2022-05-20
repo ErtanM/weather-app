@@ -5,17 +5,6 @@ import axios from "axios";
 const App = () => {
   const [weather, setWeather] = useState("");
   const [city, setCity] = useState("");
-  // const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=4872ab92af5f98386fdef2dd8dd059c8`;
-
-  // const searchLocation = (event) => {
-  //   if (event.key === "Enter") {
-  //     axios.get(url).then((response) => {
-  //       setData(response.data);
-  //       console.log(response.data);
-  //     });
-  //     setLocation("");
-  //   }
-  // };
 
   const apiCall = async (e) => {
     e.preventDefault();
