@@ -20,7 +20,9 @@ const App = () => {
   const apiCall = async (e) => {
     e.preventDefault();
     const loc = e.target.elements.loc.value;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=4872ab92af5f98386fdef2dd8dd059c8`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${
+      import.meta.env.VITE_API_KEY
+    }`;
     const req = axios.get(url);
     const res = await req;
     setWeather({
