@@ -1,30 +1,67 @@
 import "./css/App.css";
-import React, { Component } from "react";
-import WeatherCard from "./components/Weather.component";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Inf from "./Inf.json";
 
-class App extends Component {
-  //passing down to json data down to the WeatherCard
+const App = () => {
+  const [weather, setWeather] = useState("");
+  const [city, setCity] = useState("");
+  // const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=4872ab92af5f98386fdef2dd8dd059c8`;
 
-  constructor(props) {
-    super(props);
-  }
+  // const searchLocation = (event) => {
+  //   if (event.key === "Enter") {
+  //     axios.get(url).then((response) => {
+  //       setData(response.data);
+  //       console.log(response.data);
+  //     });
+  //     setLocation("");
+  //   }
+  // };
 
-  render() {
-    return (
-      <div className="App">
-        <div className="outer-card">
-          <div className="container">
-            <div className="title-container">
-              <h1>Weather NOW</h1>
-            </div>
-            <WeatherCard />
-          </div>
+  const apiCall = async (e) => {
+    e.preventDefault();
+    const loc = e.target.elements.loc.value;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=4872ab92af5f98386fdef2dd8dd059c8`;
+    const req = axios.get(url);
+    const res = await req;
+    setWeather({
+      descp: res.data.weather[0].description,
+      temp: res.data.main.temp,
+      city: res.data.name,
+      humidity: res.data.main.humidity,
+      press: res.data.main.pressure,
+    });
+
+    setCity(res.data.name);
+  };
+
+  return (
+    <div className="App">
+      <div className="bottom">
+        <div className="input">
+          <form onSubmit={apiCall} className="form">
+            <input type="text" placeholder="city" name="loc" />
+            <button className="bttn">Search</button>
+          </form>
+        </div>
+        <div className="title">
+          <h2>{city}</h2>
+        </div>
+        <div className="temp">
+          <p>Temp: {weather.temp}</p>
+          <p></p>
+        </div>
+        <div className="icon"></div>
+
+        <div className="feels-like">
+          <p className="first">Feels like: {weather.temp}</p>
+          <p className="second">
+            Humidity: {weather.humidity}
+            <br />
+          </p>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default App;
