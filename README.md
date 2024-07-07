@@ -6,4 +6,5 @@ TODO :
 -'add typescript support': done
 -'Refactor weatherhook with TS': null
 -'add components folder': null
--'add vite test': null
+-'add vite test': done
+-'Ask user for persmisson for location, if not enters manuel'
