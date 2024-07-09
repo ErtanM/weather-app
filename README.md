@@ -3,11 +3,12 @@
 
 Simple weather app with [OpenWeatherApp](https://openweathermap.org/api)
 
-TODO :
--'new structure for the app': done
--'refactor everything': null
--'add typescript support': done
--'Refactor weatherhook with TS': null
--'add components folder': null
--'add vite test': done
--'Ask user for persmisson for location, if not enters manuel'
+### TODO List
+
+- [x] 'new structure for the app' ![Done](https://img.shields.io/badge/-Done-brightgreen)
+- [ ] 'refactor everything' ![Pending](https://img.shields.io/badge/-Pending-yellow)
+- [x] 'add typescript support' ![Done](https://img.shields.io/badge/-Done-brightgreen)
+- [ ] 'Refactor weatherhook with TS' ![Pending](https://img.shields.io/badge/-Pending-yellow)
+- [ ] 'add components folder' ![Pending](https://img.shields.io/badge/-Pending-yellow)
+- [x] 'add vite test' ![Done](https://img.shields.io/badge/-Done-brightgreen)
+- [ ] 'Ask user for permission for location, if not enter manually' ![Pending](https://img.shields.io/badge/-Pending-yellow)
