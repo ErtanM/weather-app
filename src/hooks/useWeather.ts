@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 const BASE_API = import.meta.env.VITE_API_KEY;
 
+//Type for geolocation's info. Altho it's Number initially, fixed to String to use it inside fetch.
 interface Location {
   lat: string;
   lon: string;
 }
 
+//Custom hook for weather api's data to display information inside another component.
 const useWeather = (apiKey: string) => {
   const [location, setLocation] = useState<Location>({ lat: "", lon: "" });
 
@@ -13,6 +15,7 @@ const useWeather = (apiKey: string) => {
 
   const [error, setError] = useState<string | null>(null);
 
+  //Getting user's location coordinates before fetching.
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setLocation({
@@ -22,14 +25,16 @@ const useWeather = (apiKey: string) => {
     });
   }, []);
 
+  //Checking if the location data is successfully stored and fetching the weather api's data depending on the location.
   useEffect(() => {
     if (location.lat && location.lon) {
       fetchData(location.lat, location.lon);
     }
 
-    console.log(weatherData);
+    // console.log(weatherData);
   }, [location]);
 
+  //Fetching function to be used inside useEffect.
   const fetchData = async (lat: string, lon: string) => {
     await fetch(
       `http://api.weatherapi.com/v1/forecast.json?key=${BASE_API}&q=${lat},${lon}&days=3`
