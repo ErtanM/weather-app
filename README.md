@@ -1,7 +1,9 @@
 ![Static Badge](https://img.shields.io/badge/-Refactored-blue)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/highpriesst/weather-app)
 
-Simple weather app with React/Typescript/TailwindCss [WeatherAPI](https://www.weatherapi.com/)
+
+use this link instead: api.weatherapi.com/v1/forecast.json?key=<apikey>&q=<cityname>
+
 
 ### TODO List
 
