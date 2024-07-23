@@ -19,15 +19,16 @@ const useWeather = (cityName: string) => {
             import.meta.env.VITE_API_KEY
           }&units=metric`
         );
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
         const result = await response.json();
         setWeatherData(result);
         setError("");
       } catch (error: unknown) {
-        if (error instanceof Error) {
-          setError(error.message);
-        } else {
-          setError("An unknown error occurred");
-        }
+        setError(
+          error instanceof Error ? error.message : "An unknown error occurred"
+        );
         setWeatherData(null); //clearing data fetched before
       } finally {
         setLoading(false);

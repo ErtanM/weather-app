@@ -11,6 +11,7 @@ interface WeatherDataInterface {
   sys: {
     country: string;
   };
+  visibility: number;
   wind: {
     speed: number;
   };
