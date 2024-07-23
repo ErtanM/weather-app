@@ -104,10 +104,6 @@ A simple React application to fetch and display weather data for a given city us
      - `error` (string | null): Error message, if any.
      - `loading` (boolean): Loading state.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
 For any questions or issues, please reach out to [ertansofia@gmail.com](mailto:ertansofia@gmail.com).
