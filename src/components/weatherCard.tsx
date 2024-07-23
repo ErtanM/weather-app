@@ -9,6 +9,7 @@ interface WeatherCardProps {
   windSpeed: number;
   country: string;
   weatherDate: number;
+  visibility: number;
 }
 const WeatherCard: React.FC<WeatherCardProps> = ({
   icon,
@@ -18,6 +19,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   windSpeed,
   country,
   weatherDate,
+  visibility,
 }) => {
   const convertTimestamp = (timestamp: number) => {
     const date = new Date(timestamp * 1000);
@@ -31,22 +33,27 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
 
   const formattedDate = convertTimestamp(weatherDate);
 
+  const formattedVisibility = visibility / 1000;
+
   return (
-    <div className="p-[10px]">
-      <div>
+    <div className="p-[10px] flex flex-col">
+      <div className="flex flex-col items-start gap-3">
+        <p className="text-lg font-bold">
+          {location}, {country}
+        </p>
+        <span className="text-xs text-gray-400">{formattedDate}</span>
+      </div>
+      <div className="flex items-center justify-center">
         <img
           src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
           alt="Weather Icon"
         />
-        <p>{degree} °C</p>
-        <p>{formattedDate}</p>
-        <p>
-          {location}, {country}
-        </p>
+        <p className="text-3xl">{degree.toFixed(0)} °C</p>
       </div>
-      <div>
+      <div className="flex gap-5 justify-center">
         <p>Humidity: {humidity}%</p>
         <p>Wind Speed:{windSpeed}m/s</p>
+        <p>Wind Speed:{formattedVisibility}km</p>
       </div>
     </div>
   );

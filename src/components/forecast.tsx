@@ -19,19 +19,16 @@ const Forecast: React.FC = () => {
     setResult("");
   }
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
   return (
-    <div className="flex flex-col mb-auto md:w-[500px] bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100">
+    <div className="flex flex-col mb-auto md:w-[500px] bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100">
       <SearchBar
         onSubmit={handleSubmit}
         onChange={handleChange}
         cityName={cityName}
       />
+      {loading && <p>Loading...</p>}
       {error ? (
-        <p>{error}</p>
+        <p className="text-red-500">{error}</p>
       ) : (
         weatherData && (
           <WeatherCard
@@ -42,6 +39,7 @@ const Forecast: React.FC = () => {
             windSpeed={weatherData.wind.speed}
             country={weatherData.sys.country}
             weatherDate={weatherData.dt}
+            visibility={weatherData.visibility}
           />
         )
       )}
